@@ -26,6 +26,12 @@ pub struct TransportItemDto {
     pub description: Option<String>,
     #[serde(rename = "allergenGroups", skip_serializing_if = "Option::is_none")]
     pub allergen_groups: Option<Vec<models::AllergenGroupDto>>,
+    /// Free-form tags set in iiko
+    #[serde(rename = "tags", default, skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Vec<models::TagDto>>,
+    /// Labels such as Vegan, Alcohol, Spicy
+    #[serde(rename = "labels", default, skip_serializing_if = "Option::is_none")]
+    pub labels: Option<Vec<models::LabelDto>>,
     /// Product ID
     #[serde(rename = "itemId", skip_serializing_if = "Option::is_none")]
     pub item_id: Option<uuid::Uuid>,
@@ -47,6 +53,8 @@ impl TransportItemDto {
             name: None,
             description: None,
             allergen_groups: None,
+            tags: None,
+            labels: None,
             item_id: None,
             modifier_schema_id: None,
             tax_category: None,

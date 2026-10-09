@@ -912,6 +912,8 @@ pub mod table_order_web_hook_filter;
 pub use self::table_order_web_hook_filter::TableOrderWebHookFilter;
 pub mod table_orders_response;
 pub use self::table_orders_response::TableOrdersResponse;
+pub mod label_dto;
+pub use self::label_dto::LabelDto;
 pub mod tag_dto;
 pub use self::tag_dto::TagDto;
 pub mod tax_category_dto;
