@@ -39,6 +39,9 @@ pub struct TransportItemSizeDto {
         skip_serializing_if = "Option::is_none"
     )]
     pub nutrition_per_hundred_grams: Option<serde_json::Value>,
+    /// Nutrition per 100 g of product grouped by departments
+    #[serde(rename = "nutritions", default, skip_serializing_if = "Option::is_none")]
+    pub nutritions: Option<serde_json::Value>,
     /// links to images
     #[serde(rename = "buttonImageUrl", skip_serializing_if = "Option::is_none")]
     pub button_image_url: Option<String>,
@@ -61,6 +64,7 @@ impl TransportItemSizeDto {
             portion_weight_grams: None,
             size_id: None,
             nutrition_per_hundred_grams: None,
+            nutritions: None,
             button_image_url: None,
             button_image_cropped_url: None,
         }
